@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.example.maas.ModelBaselineTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2026-10-04T13:37:09" hostname="DESKTOP-IAA1MFP" time="0.008">
+  <properties/>
+  <testcase name="testServerStatusOfflineDefault" classname="com.example.maas.ModelBaselineTest" time="0.005"/>
+  <testcase name="testSystemMetricsPlaceholderDefault" classname="com.example.maas.ModelBaselineTest" time="0.001"/>
+  <testcase name="testAltoInitialDefault" classname="com.example.maas.ModelBaselineTest" time="0.0"/>
+  <testcase name="testNetworkInitialDefault" classname="com.example.maas.ModelBaselineTest" time="0.001"/>
+  <testcase name="testServicesInitialDefault" classname="com.example.maas.ModelBaselineTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

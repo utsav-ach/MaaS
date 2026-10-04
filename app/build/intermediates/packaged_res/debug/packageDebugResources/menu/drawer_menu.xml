@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:id="@+id/group_core" android:checkableBehavior="single">
+        <item
+            android:id="@+id/menu_dashboard"
+            android:icon="@drawable/ic_dashboard"
+            android:title="@string/nav_dashboard"
+            android:checked="true" />
+        <item
+            android:id="@+id/menu_server"
+            android:icon="@drawable/ic_server"
+            android:title="@string/nav_server" />
+        <item
+            android:id="@+id/menu_apps"
+            android:icon="@drawable/ic_apps"
+            android:title="@string/nav_apps" />
+        <item
+            android:id="@+id/menu_services"
+            android:icon="@drawable/ic_services"
+            android:title="@string/nav_services" />
+    </group>
+
+    <item android:title="@string/nav_category_operations">
+        <menu>
+            <item
+                android:id="@+id/menu_network"
+                android:icon="@drawable/ic_network"
+                android:title="@string/nav_network" />
+            <item
+                android:id="@+id/menu_monitoring"
+                android:icon="@drawable/ic_monitoring"
+                android:title="@string/nav_monitoring" />
+            <item
+                android:id="@+id/menu_alto"
+                android:icon="@drawable/ic_alto"
+                android:title="@string/nav_alto" />
+        </menu>
+    </item>
+
+    <item android:title="@string/nav_category_system">
+        <menu>
+            <item
+                android:id="@+id/menu_logs"
+                android:icon="@drawable/ic_logs"
+                android:title="@string/nav_logs" />
+            <item
+                android:id="@+id/menu_settings"
+                android:icon="@drawable/ic_settings"
+                android:title="@string/nav_settings" />
+        </menu>
+    </item>
+</menu>

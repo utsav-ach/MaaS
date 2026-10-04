@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/maas_bg_dark"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="@dimen/spacing_xxl">
+
+    <com.google.android.material.card.MaterialCardView
+        style="@style/Widget.MaaS.Card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:padding="@dimen/spacing_xxl">
+
+            <ImageView
+                android:id="@+id/iv_placeholder_icon"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:contentDescription="Module icon"
+                android:src="@drawable/ic_server"
+                app:tint="@color/maas_accent" />
+
+            <TextView
+                android:id="@+id/tv_placeholder_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_large"
+                android:text="Module Title"
+                android:textColor="@color/text_primary"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_placeholder_badge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_xs"
+                android:background="@drawable/bg_badge_info"
+                android:text="Planned Module"
+                android:textColor="@color/maas_accent"
+                android:textSize="@dimen/text_size_badge"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_placeholder_desc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_large"
+                android:gravity="center"
+                android:lineSpacingMultiplier="1.3"
+                android:text="@string/module_placeholder_note"
+                android:textColor="@color/text_secondary"
+                android:textSize="@dimen/text_size_body" />
+
+            <TextView
+                android:id="@+id/tv_placeholder_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_medium"
+                android:fontFamily="monospace"
+                android:text="@string/module_placeholder_status"
+                android:textColor="@color/text_mono"
+                android:textSize="11sp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_placeholder_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_xl"
+                android:backgroundTint="@color/maas_card_bg_elevated"
+                android:text="@string/btn_back_to_dashboard"
+                android:textColor="@color/text_primary"
+                app:cornerRadius="8dp"
+                app:strokeColor="@color/maas_card_stroke"
+                app:strokeWidth="1dp" />
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+</LinearLayout>

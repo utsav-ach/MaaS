@@ -1,0 +1,63 @@
+<resources>
+    <!-- Base Application Theme -->
+    <style name="Theme.MaaS" parent="Theme.MaterialComponents.NoActionBar">
+        <!-- Brand Colors -->
+        <item name="colorPrimary">@color/maas_primary</item>
+        <item name="colorPrimaryVariant">@color/maas_primary_variant</item>
+        <item name="colorOnPrimary">@color/maas_on_primary</item>
+        <item name="colorSecondary">@color/maas_secondary</item>
+        <item name="colorSecondaryVariant">@color/maas_accent</item>
+        <item name="colorOnSecondary">@color/maas_on_primary</item>
+
+        <!-- Status Bar & Navigation Bar -->
+        <item name="android:statusBarColor">@color/maas_bg_dark</item>
+        <item name="android:navigationBarColor">@color/maas_bg_dark</item>
+        <item name="android:windowLightStatusBar">false</item>
+
+        <!-- Background & Surface -->
+        <item name="android:windowBackground">@color/maas_bg_dark</item>
+        <item name="colorSurface">@color/maas_card_bg</item>
+        <item name="colorOnSurface">@color/text_primary</item>
+    </style>
+
+    <!-- Technical Card Style -->
+    <style name="Widget.MaaS.Card" parent="Widget.MaterialComponents.CardView">
+        <item name="cardBackgroundColor">@color/maas_card_bg</item>
+        <item name="cardCornerRadius">@dimen/card_corner_radius</item>
+        <item name="cardElevation">@dimen/card_elevation</item>
+        <item name="strokeColor">@color/maas_card_stroke</item>
+        <item name="strokeWidth">@dimen/card_stroke_width</item>
+        <item name="android:layout_marginBottom">@dimen/spacing_medium</item>
+    </style>
+
+    <!-- Sub-card for Metric Items -->
+    <style name="Widget.MaaS.MetricCard" parent="Widget.MaterialComponents.CardView">
+        <item name="cardBackgroundColor">@color/maas_card_bg_elevated</item>
+        <item name="cardCornerRadius">@dimen/card_corner_radius_small</item>
+        <item name="cardElevation">0dp</item>
+        <item name="strokeColor">@color/maas_card_stroke</item>
+        <item name="strokeWidth">@dimen/card_stroke_width</item>
+    </style>
+
+    <!-- Section Title Text -->
+    <style name="TextAppearance.MaaS.SectionTitle" parent="TextAppearance.MaterialComponents.Subtitle1">
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/text_size_title</item>
+        <item name="android:letterSpacing">0.03</item>
+    </style>
+
+    <!-- Metric Value Text -->
+    <style name="TextAppearance.MaaS.MetricValue" parent="TextAppearance.MaterialComponents.Headline6">
+        <item name="android:textColor">@color/text_accent</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/text_size_metric_value</item>
+    </style>
+
+    <!-- Monospace Technical Text -->
+    <style name="TextAppearance.MaaS.Mono" parent="TextAppearance.MaterialComponents.Body2">
+        <item name="android:fontFamily">monospace</item>
+        <item name="android:textColor">@color/text_mono</item>
+        <item name="android:textSize">@dimen/text_size_body</item>
+    </style>
+</resources>

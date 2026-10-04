@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- App Identity -->
+    <string name="app_name">MaaS</string>
+    <string name="app_full_name">Mobile-as-a-Server</string>
+    <string name="app_tagline">Edge Web Hosting Platform</string>
+    <string name="project_subtitle">Tribhuvan University BCA Project II</string>
+    <string name="node_label">Node ID: edge-android-01 (Offline)</string>
+    
+    <!-- Action Bar / Menu -->
+    <string name="action_refresh">Refresh Status</string>
+    <string name="action_info">About MaaS</string>
+    <string name="nav_header_title">MaaS Management</string>
+    <string name="nav_header_version">v1.0.0 (Day 1 Shell)</string>
+    <string name="open_drawer">Open navigation drawer</string>
+    <string name="close_drawer">Close navigation drawer</string>
+
+    <!-- Navigation Modules -->
+    <string name="nav_dashboard">Dashboard</string>
+    <string name="nav_server">Server Environment</string>
+    <string name="nav_apps">Web Applications</string>
+    <string name="nav_services">Services Daemon</string>
+    <string name="nav_network">Network &amp; Tunnel</string>
+    <string name="nav_monitoring">Live Telemetry</string>
+    <string name="nav_alto">ALTO Engine</string>
+    <string name="nav_logs">Server Logs</string>
+    <string name="nav_settings">Configuration</string>
+    <string name="nav_category_core">Core Management</string>
+    <string name="nav_category_operations">Operations &amp; Optimization</string>
+    <string name="nav_category_system">System</string>
+
+    <!-- Section: Server Status -->
+    <string name="section_server_status">Server Status</string>
+    <string name="server_status_badge_offline">OFFLINE</string>
+    <string name="server_status_headline">Currently Offline / Not Connected</string>
+    <string name="server_status_description">The Linux Server Environment (Termux / Ubuntu layer) is currently not running. Server process controls will be integrated in upcoming chunks.</string>
+    <string name="btn_server_action">Initialize Server</string>
+    <string name="btn_server_offline_hint">[Day 1 Shell] Server daemon integration planned for upcoming chunks</string>
+    <string name="server_runtime_target">Target Runtime: Ubuntu 22.04 LTS via PRoot / Termux</string>
+
+    <!-- Section: System Metrics (Day 1 Static Shell) -->
+    <string name="section_system">System Telemetry</string>
+    <string name="metric_cpu_title">CPU Load</string>
+    <string name="metric_cpu_placeholder">— %</string>
+    <string name="metric_cpu_state">Offline</string>
+    <string name="metric_ram_title">RAM Usage</string>
+    <string name="metric_ram_placeholder">— / — GB</string>
+    <string name="metric_ram_state">Standby</string>
+    <string name="metric_temp_title">Thermal Temp</string>
+    <string name="metric_temp_placeholder">— °C</string>
+    <string name="metric_temp_state">Unmonitored</string>
+    <string name="metric_battery_title">Battery Level</string>
+    <string name="metric_battery_placeholder">— %</string>
+    <string name="metric_battery_state">Standby</string>
+    <string name="metrics_placeholder_note">[Day 1 Initial State] Real hardware telemetry will be connected in the monitoring chunk.</string>
+
+    <!-- Section: Services -->
+    <string name="section_services">Services &amp; Deployments</string>
+    <string name="services_active_title">Active Daemons</string>
+    <string name="services_active_val">0 Running</string>
+    <string name="services_apps_title">Hosted Applications</string>
+    <string name="services_apps_val">0 Deployed</string>
+    <string name="service_nginx_label">Nginx Web Server: Stopped</string>
+    <string name="service_db_label">Database Service: Stopped</string>
+    <string name="service_tunnel_label">Tunnel Daemon: Stopped</string>
+
+    <!-- Section: Network -->
+    <string name="section_network">Network &amp; Connectivity</string>
+    <string name="network_local_ip_title">Local IP Address</string>
+    <string name="network_local_ip_val">Unavailable</string>
+    <string name="network_tunnel_title">Cloudflare Public Tunnel</string>
+    <string name="network_tunnel_val">Not Configured</string>
+    <string name="network_status_title">Connection Status</string>
+    <string name="network_status_val">Disconnected</string>
+
+    <!-- Section: ALTO -->
+    <string name="section_alto">ALTO Orchestration</string>
+    <string name="alto_title">Adaptive Load &amp; Traffic Orchestrator</string>
+    <string name="alto_status_label">Orchestrator Status</string>
+    <string name="alto_status_val">Not Active</string>
+    <string name="alto_desc">ALTO handles edge load throttling, battery/thermal-aware request distribution, and traffic offloading when the edge host reaches threshold limits.</string>
+    <string name="alto_policy_label">Active Policy: Standby (Awaiting Server)</string>
+
+    <!-- Placeholder Modules -->
+    <string name="module_placeholder_status">Module Status: Architecture Prepared (Day 1 Shell)</string>
+    <string name="module_placeholder_note">This module is planned for subsequent development chunks of TU BCA Project II. The interface architecture is wired and ready for backend integration.</string>
+    <string name="btn_back_to_dashboard">Return to Dashboard</string>
+</resources>
