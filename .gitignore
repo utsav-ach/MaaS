@@ -8,3 +8,32 @@
 .externalNativeBuild
 .cxx
 local.properties
+@"
+# Gradle
+.gradle/
+**/build/
+
+# Local configuration
+local.properties
+
+# Android Studio / IntelliJ
+.idea/
+*.iml
+
+# Build outputs
+*.apk
+*.aab
+
+# Generated files
+captures/
+.externalNativeBuild/
+.cxx/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Keystore / signing files
+*.jks
+*.keystore
+"@ | Set-Content .gitignore
