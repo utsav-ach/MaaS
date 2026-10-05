@@ -11,7 +11,7 @@
     <string name="action_refresh">Refresh Status</string>
     <string name="action_info">About MaaS</string>
     <string name="nav_header_title">MaaS Management</string>
-    <string name="nav_header_version">v1.0.0 (Day 1 Shell)</string>
+    <string name="nav_header_version">v1.0.0 (Day 2 Architecture)</string>
     <string name="open_drawer">Open navigation drawer</string>
     <string name="close_drawer">Close navigation drawer</string>
 
@@ -35,10 +35,10 @@
     <string name="server_status_headline">Currently Offline / Not Connected</string>
     <string name="server_status_description">The Linux Server Environment (Termux / Ubuntu layer) is currently not running. Server process controls will be integrated in upcoming chunks.</string>
     <string name="btn_server_action">Initialize Server</string>
-    <string name="btn_server_offline_hint">[Day 1 Shell] Server daemon integration planned for upcoming chunks</string>
+    <string name="btn_server_offline_hint">[Day 2 Architecture] Server daemon integration planned for upcoming chunks</string>
     <string name="server_runtime_target">Target Runtime: Ubuntu 22.04 LTS via PRoot / Termux</string>
 
-    <!-- Section: System Metrics (Day 1 Static Shell) -->
+    <!-- Section: System Metrics (Day 2 Decoupled Baseline) -->
     <string name="section_system">System Telemetry</string>
     <string name="metric_cpu_title">CPU Load</string>
     <string name="metric_cpu_placeholder">— %</string>
@@ -52,7 +52,7 @@
     <string name="metric_battery_title">Battery Level</string>
     <string name="metric_battery_placeholder">— %</string>
     <string name="metric_battery_state">Standby</string>
-    <string name="metrics_placeholder_note">[Day 1 Initial State] Real hardware telemetry will be connected in the monitoring chunk.</string>
+    <string name="metrics_placeholder_note">[Day 2 Initial State] Real hardware telemetry will be connected in the monitoring chunk.</string>
 
     <!-- Section: Services -->
     <string name="section_services">Services &amp; Deployments</string>
@@ -82,7 +82,7 @@
     <string name="alto_policy_label">Active Policy: Standby (Awaiting Server)</string>
 
     <!-- Placeholder Modules -->
-    <string name="module_placeholder_status">Module Status: Architecture Prepared (Day 1 Shell)</string>
+    <string name="module_placeholder_status">Module Status: Architecture Prepared (Day 2 Architecture)</string>
     <string name="module_placeholder_note">This module is planned for subsequent development chunks of TU BCA Project II. The interface architecture is wired and ready for backend integration.</string>
     <string name="btn_back_to_dashboard">Return to Dashboard</string>
 </resources>

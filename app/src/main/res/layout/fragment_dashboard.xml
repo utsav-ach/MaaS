@@ -65,7 +65,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:background="@drawable/bg_badge_info"
-                        android:text="DAY 1"
+                        android:text="DAY 2"
                         android:textColor="@color/maas_accent"
                         android:textSize="@dimen/text_size_badge"
                         android:textStyle="bold" />

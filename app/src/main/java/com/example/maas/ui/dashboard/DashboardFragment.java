@@ -11,17 +11,22 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import com.example.maas.MainActivity;
 import com.example.maas.R;
-import com.example.maas.model.AltoState;
-import com.example.maas.model.NetworkState;
-import com.example.maas.model.ServerStatusState;
-import com.example.maas.model.ServicesState;
-import com.example.maas.model.SystemMetricsState;
+import com.example.maas.model.AltoStatus;
+import com.example.maas.model.ApplicationInfo;
+import com.example.maas.model.MonitoringData;
+import com.example.maas.model.NetworkInfo;
+import com.example.maas.model.ServerConnectionState;
+import com.example.maas.model.ServerStatus;
+import com.example.maas.model.ServiceInfo;
+import com.example.maas.service.ServerControlManager;
+import com.example.maas.service.ServerControlService;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.chip.Chip;
 
 /**
  * Main Technical Dashboard for Mobile-as-a-Server (MaaS).
  * Displays server status, static baseline hardware metrics, services, network, and ALTO states.
+ * Connects cleanly through the ServerControlService abstraction layer.
  */
 public class DashboardFragment extends Fragment {
 
@@ -88,36 +93,50 @@ public class DashboardFragment extends Fragment {
     }
 
     /**
-     * Binds Day 1 initial/static model state cleanly.
-     * Ready to receive live observables or callbacks in subsequent chunks.
+     * Binds model state via the ServerControlService abstraction layer.
+     * Keeps the UI completely decoupled from server execution details.
      */
     public void bindInitialState() {
-        ServerStatusState serverState = ServerStatusState.createOfflineDefault();
-        tvServerStatusBadge.setText(serverState.getBadgeText());
-        tvServerStatusHeadline.setText(serverState.getStatusHeadline());
-        tvServerStatusDesc.setText(serverState.getStatusDescription());
+        ServerControlService serverService = ServerControlManager.getInstance();
 
-        SystemMetricsState metrics = SystemMetricsState.createPlaceholderDefault();
-        tvMetricCpuVal.setText(metrics.getCpuValue());
-        tvMetricCpuState.setText(metrics.getCpuState());
-        tvMetricRamVal.setText(metrics.getRamValue());
-        tvMetricRamState.setText(metrics.getRamState());
-        tvMetricTempVal.setText(metrics.getTempValue());
-        tvMetricTempState.setText(metrics.getTempState());
-        tvMetricBatteryVal.setText(metrics.getBatteryValue());
-        tvMetricBatteryState.setText(metrics.getBatteryState());
+        ServerStatus serverStatus = serverService.getServerStatus();
+        tvServerStatusBadge.setText(serverStatus.getStatus().getLabel().toUpperCase());
+        tvServerStatusHeadline.setText(serverStatus.getStatus() == ServerConnectionState.CONNECTED ? "Server Online" : "Currently Offline / Not Connected");
+        tvServerStatusDesc.setText(serverStatus.getDescription());
 
-        ServicesState services = ServicesState.createInitialDefault();
-        tvServicesActiveVal.setText(services.getActiveServicesCount() + " Running");
-        tvServicesAppsVal.setText(services.getDeployedAppsCount() + " Deployed");
+        MonitoringData metrics = serverService.getMonitoringData();
+        tvMetricCpuVal.setText(metrics.getCpuUsageFormatted());
+        tvMetricCpuState.setText(metrics.isMonitored() ? "Active" : "Offline");
+        tvMetricRamVal.setText(metrics.getMemoryUsageFormatted());
+        tvMetricRamState.setText(metrics.isMonitored() ? "Active" : "Standby");
+        tvMetricTempVal.setText(metrics.getTemperatureFormatted());
+        tvMetricTempState.setText(metrics.isMonitored() ? "Active" : "Unmonitored");
+        tvMetricBatteryVal.setText(metrics.getBatteryLevelFormatted());
+        tvMetricBatteryState.setText(metrics.isMonitored() ? "Active" : "Standby");
 
-        NetworkState network = NetworkState.createInitialDefault();
-        tvNetworkLocalIp.setText(network.getLocalIpAddress());
-        tvNetworkTunnel.setText(network.getPublicTunnelUrl());
-        tvNetworkStatus.setText(network.getConnectionStatus());
+        int runningServices = 0;
+        for (ServiceInfo service : serverService.getServices()) {
+            if (service.isRunning()) {
+                runningServices++;
+            }
+        }
+        tvServicesActiveVal.setText(runningServices + " Running");
 
-        AltoState alto = AltoState.createInitialDefault();
-        tvAltoStatusBadge.setText(alto.getStatus());
+        int runningApps = 0;
+        for (ApplicationInfo app : serverService.getApplications()) {
+            if (app.isRunning()) {
+                runningApps++;
+            }
+        }
+        tvServicesAppsVal.setText(runningApps + " Deployed");
+
+        NetworkInfo network = serverService.getNetworkStatus();
+        tvNetworkLocalIp.setText(network.getLocalAddress());
+        tvNetworkTunnel.setText(network.getPublicAddress());
+        tvNetworkStatus.setText(network.isConnected() ? "Connected" : "Disconnected");
+
+        AltoStatus alto = serverService.getAltoStatus();
+        tvAltoStatusBadge.setText(alto.getState());
     }
 
     private void setupListeners(@NonNull View root) {

@@ -11,7 +11,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import com.example.maas.ui.alto.AltoFragment;
-import com.example.maas.ui.apps.ApplicationsFragment;
+import com.example.maas.ui.applications.ApplicationsFragment;
 import com.example.maas.ui.dashboard.DashboardFragment;
 import com.example.maas.ui.logs.LogsFragment;
 import com.example.maas.ui.monitoring.MonitoringFragment;
